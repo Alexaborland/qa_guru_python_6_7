@@ -8,10 +8,10 @@ def test_download_png():
     url = 'https://selenium.dev/images/selenium_logo_square_green.png'
 
     response = requests.get(url)
-    with open('selenium_logo_square_green.png', 'wb') as file:
+    with open(os.path.join(tmp_path, 'selenium_logo_square_green.png'), 'wb') as file:
         file.write(response.content)
 
-    size = os.path.getsize('selenium_logo_square_green.png')
+    size = os.path.getsize(os.path.join(tmp_path, 'selenium_logo_square_green.png'))
 
     assert 30803 == size
 

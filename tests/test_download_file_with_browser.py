@@ -1,3 +1,4 @@
+import os.path
 import time
 
 from selenium import webdriver
@@ -21,3 +22,7 @@ def test_download_by_browser():
     browser.element(".d-none .Button-label").click()
     browser.element('[data-open-app="link"]').click()
     time.sleep(5)
+
+    assert os.path.exists(os.path.join(tmp_path, 'pytest-main-zip'))
+
+    os.remove(os.path.join(tmp_path, 'pytest-main.zip'))
