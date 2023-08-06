@@ -1,7 +1,7 @@
 import os.path
 import pytest
 
-tmp_path = os.path.join(os.path.dirname((os.path.abspath(__file__))), 'tmp')
+tmp_path = os.path.join(os.path.dirname((os.path.abspath(__file__))), '../tmp')
 resources_path = os.path.join(os.path.dirname((os.path.abspath(__file__))), 'resources')
 
 

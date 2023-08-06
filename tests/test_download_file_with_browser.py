@@ -16,7 +16,9 @@ def test_download_by_browser():
         "download.prompt_for_download": False
     }
     options.add_experimental_option("prefs", prefs)
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    
     browser.config.driver = driver
     browser.open("https://github.com/pytest-dev/pytest")
     browser.element(".d-none .Button-label").click()

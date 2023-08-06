@@ -8,8 +8,7 @@ from .conftest import resources_path
 def test_by_xlsx():
     workbook = load_workbook(os.path.join(resources_path, 'file_example_XLSX_50.xlsx'))
     sheet = workbook.active
-    n = sheet.cell(row=3, column=2).value
-    print(n)
+    print(sheet.cell(row=21, column=2).value)
 
-    assert 'Teresa' in n
+    assert sheet.cell(row=21, column=2).value == 'Teresa'
 
