@@ -17,14 +17,14 @@ def test_download_by_browser():
     }
     options.add_experimental_option("prefs", prefs)
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager(version="114.0.5735.90").install()), options=options)
     
     browser.config.driver = driver
     browser.open("https://github.com/pytest-dev/pytest")
     browser.element(".d-none .Button-label").click()
     browser.element('[data-open-app="link"]').click()
-    time.sleep(5)
+    time.sleep(7)
 
-    assert os.path.exists(os.path.join(tmp_path, 'pytest-main-zip'))
+    assert os.path.exists(os.path.join(tmp_path, 'pytest-main.zip'))
 
     os.remove(os.path.join(tmp_path, 'pytest-main.zip'))
